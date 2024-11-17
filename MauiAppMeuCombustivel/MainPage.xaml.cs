@@ -14,6 +14,9 @@
                 double etanol = Convert.ToDouble(txt_etanol.Text);
                 double gasolina = Convert.ToDouble(txt_gasolina.Text);
 
+                string marca = Convert.ToString(txt_Marca.Text);
+                string modelo = Convert.ToString(txt_Modelo.Text);
+
                 string msg = "";
 
                 if(etanol <= (gasolina * 0.7) )
