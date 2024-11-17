@@ -19,7 +19,7 @@
 
                 string msg = "";
 
-                 DisplayAlert("Pronto!", msg, " PARA O SEU modelo, marca...");
+                 DisplayAlert("Pronto!", msg, " PARA O SEU {modelo}, {marca}...");
                 
                 if(etanol <= (gasolina * 0.7) )
                 {
