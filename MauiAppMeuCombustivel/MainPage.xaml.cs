@@ -17,8 +17,10 @@
                 string marca = Convert.ToString(txt_Marca.Text);
                 string modelo = Convert.ToString(txt_Modelo.Text);
 
-                string msg = "O seu {txt_Modelo.Text}, {txt_Modelo.Text};
+                string msg = "";
 
+                 DisplayAlert("Pronto!", msg, " PARA O SEU modelo, marca...");
+                
                 if(etanol <= (gasolina * 0.7) )
                 {
                     msg = "O etanol está compensando.";
