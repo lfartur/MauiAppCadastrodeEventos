@@ -14,10 +14,10 @@
                 SemanticProperties.Description="dot net bot in a race car number eight" />
 
             <Label text="Marca do Veículo:" />
-            <Entry x:Name="txt_Marca:" Placeholder="Ex:Chevrolet "/> 
+            <Entry x:Name="txt_Marca" Placeholder="Ex:Chevrolet "/> 
 
             <Label text="Modelo do Veículo:" />
-            <Entry x:Name="txt_Modelo:" Placeholder="Ex:Montana " />
+            <Entry x:Name="txt_Modelo" Placeholder="Ex:Montana " />
 
             <Label Text="Preço do Etanol:" />
             <Entry x:Name="txt_etanol" Placeholder="R$ " />
