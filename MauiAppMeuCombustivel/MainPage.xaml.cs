@@ -36,6 +36,6 @@
                 DisplayAlert("Ops", ex.Message, "Fechar");
             }
 
-        } // Fecha método
-    } //Fecha Class
-} // Fecha namespace
+        } 
+    } 
+} 
