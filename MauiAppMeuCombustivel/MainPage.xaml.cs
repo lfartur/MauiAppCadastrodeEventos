@@ -17,7 +17,7 @@
                 string marca = Convert.ToString(txt_Marca.Text);
                 string modelo = Convert.ToString(txt_Modelo.Text);
 
-                string msg = "";
+                string msg = "O seu {txt_Modelo.Text}, {txt_Modelo.Text};
 
                 if(etanol <= (gasolina * 0.7) )
                 {
