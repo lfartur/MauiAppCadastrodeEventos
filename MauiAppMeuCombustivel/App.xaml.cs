@@ -1,12 +1,12 @@
-﻿namespace MauiAppMeuCombustivel
-{
-    public partial class App : Application
-    {
-        public App()
-        {
-            InitializeComponent();
+﻿using CadastroDeEventos.Views;
 
-            MainPage = new AppShell();
-        }
+namespace CadastroDeEventos;
+
+public partial class App : Application
+{
+    public App()
+    {
+        InitializeComponent();
+        MainPage = new NavigationPage(new MainPage());
     }
 }
