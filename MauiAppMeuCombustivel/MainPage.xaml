@@ -1,33 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiAppMeuCombustivel.MainPage">
+             xmlns:local="clr-namespace:CadastroDeEventos"
+             x:Class="CadastroDeEventos.MainPage"
+             Title="Cadastro de Evento">
+
+    <ContentPage.BindingContext>
+        <local:Evento />
+    </ContentPage.BindingContext>
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <Image
-                Source="dotnet_bot.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
+        <VerticalStackLayout Padding="20" Spacing="15">
 
-            <Label text="Marca do Veículo:" />
-            <Entry x:Name="txt_Marca" Placeholder="Ex:Chevrolet "/> 
+            <Entry Placeholder="Nome do Evento" 
+                   Text="{Binding Nome}" />
+            
+            <DatePicker Date="{Binding DataInicio}" 
+                        Title="Data de Início" />
 
-            <Label text="Modelo do Veículo:" />
-            <Entry x:Name="txt_Modelo" Placeholder="Ex:Montana " />
+            <DatePicker Date="{Binding DataTermino}" 
+                        Title="Data de Término" />
 
-            <Label Text="Preço do Etanol:" />
-            <Entry x:Name="txt_etanol" Placeholder="R$ " />
+            <Entry Placeholder="Número de Participantes" 
+                   Keyboard="Numeric" 
+                   Text="{Binding NumeroParticipantes}" />
 
-            <Label Text="Preço da Gasolina:" />
-            <Entry x:Name="txt_gasolina" Placeholder="R$ " />
+            <Entry Placeholder="Local do Evento" 
+                   Text="{Binding Local}" />
 
-            <Button Text="Qual compensa mais?" Clicked="Button_Clicked" />
+            <Entry Placeholder="Custo por Participante" 
+                   Keyboard="Numeric" 
+                   Text="{Binding CustoPorParticipante}" />
+
+            <Button Text="Cadastrar Evento" 
+                    Command="{Binding Source={x:Reference Page}, Path=CadastrarEventoCommand}" />
 
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>
