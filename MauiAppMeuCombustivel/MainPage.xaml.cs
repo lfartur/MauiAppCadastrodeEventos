@@ -1,39 +1,22 @@
-﻿namespace MauiAppMeuCombustivel
+﻿using CadastroDeEventos.Models;
+using CadastroDeEventos.Views;
+
+namespace CadastroDeEventos;
+
+public partial class MainPage : ContentPage
 {
-    public partial class MainPage : ContentPage
+    public Command CadastrarEventoCommand { get; }
+
+    public MainPage()
     {
-        public MainPage()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+        CadastrarEventoCommand = new Command(CadastrarEvento);
+        BindingContext = this;
+    }
 
-        private void Button_Clicked(System.Object sender, System.EventArgs e)
-        {
-            try
-            {
-                double etanol = Convert.ToDouble(txt_etanol.Text);
-                double gasolina = Convert.ToDouble(txt_gasolina.Text);
-
-                string marca = Convert.ToString(txt_Marca.Text);
-                string modelo = Convert.ToString(txt_Modelo.Text);
-
-                string msg = "";
-                
-                if(etanol <= (gasolina * 0.7) )
-                {
-                    msg = "O etanol está compensando para o seu {marca} e {modelo}.";
-                } else
-                {
-                    msg = "O etanol não compensando para o seu {marca} e {modelo}.";
-                }
-
-                DisplayAlert("Calculado", msg, "OK");
-
-            } catch(Exception ex)
-            {
-                DisplayAlert("Ops", ex.Message, "Fechar");
-            }
-
-        } 
-    } 
-} 
+    private async void CadastrarEvento()
+    {
+        var evento = (Evento)BindingContext;
+        await Navigation.PushAsync(new ResumoPage(evento));
+    }
+}
